@@ -1,0 +1,739 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&display=swap');
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Baloo Bhai 2', cursive;
+    color: $dark_color;
+    line-height: 1.6;
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: $light_color;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-size: $font_biggest;
+}
+
+h2 {
+    font-size: $heading;
+}
+
+i {
+    font-size: 2rem;
+    color: white;
+}
+
+// ********* HOME PAGE CODE STARTS *************
+#navMobileOpenButton {
+    width: 30px;
+    height: 3px;
+    background: white;
+    position: relative;
+    z-index: 1000;
+    &:hover{
+        cursor: pointer;
+    }
+    display: none;
+}
+#navMobileOpenButton::after,
+#navMobileOpenButton::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    height: 3px;
+    top: -10px;
+    background: white;
+    &:hover{
+        cursor: pointer;
+    }
+}
+#navMobileOpenButton::after {
+    top: 10px;
+}
+#wrapper {
+    background: rgba($color: #000000, $alpha: 0.7);
+    width: 100vw;
+    height: 0vh;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(7px);
+    // display: none;
+    transition: all .5s;
+    span {
+        color: white;
+        font-size: $font_biggest;
+        position: absolute;
+        top: 0;
+        right: 6%;
+        display: none;
+        &:hover{cursor: pointer;}
+    }
+}
+#navMobile {
+    display: none;
+    font-size: 30px;
+}
+.classAdd{
+    display: block !important;
+}
+.classRemove{
+    display: none !important;
+}
+
+.navbar {
+    background: transparent;
+    transition: 0.3s ease-in;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    position: fixed;
+    span {
+        font-weight: 400;
+        line-height: 1.2;
+        font-size: $heading;
+        color: $light-color;
+        i, span {
+            color: $color_green;
+        }
+    }
+    .navlinks {
+        display: inline-flex;
+        ul {
+            display: flex;
+            li {
+                list-style: none;
+                margin-left: 30px;
+                font-size: $subHeadings;
+                a {
+                    color: $color_grey;
+                    position: relative;
+                    &::after {
+                        content: '';
+                        width: 0%;
+                        height: 3px;
+                        background-color: $color_green;
+                        position: absolute;
+                        display: inline;
+                        top: 35px;
+                        left: 1px;
+                        transition: width 0.5s;
+                    }
+                    &:hover {
+                        color: $light-color;
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+header {
+    // background: url('blog.jpg') center center/cover;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6);
+    }
+    .contentBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85%;
+        z-index: 3;
+        display: inline-flex;
+        flex-direction: column;
+        color: $light-color;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        h1 {
+            font-weight: 100;
+        }
+        p {
+            font-size: $subHeadings;
+        }
+    }
+}
+
+%btnShared {
+    background: $color_green;
+    padding: 13px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: $light_color;
+    &:hover {
+        background: rgb(32, 135, 56);;
+    }
+}
+
+%twoColumnsShared {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // margin-bottom: $left_padding;
+    .divImg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .boxText {
+        padding: $top_padding $left_padding;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        h2 {
+            font-size: $heading;
+        }
+        .pTwo {
+            font-weight: bold
+        }
+    }
+}
+
+.btn {
+    &1 {
+        @extend %btnShared;
+        i{
+            font-size: 18px;
+        }
+    }
+    &2 {
+        @extend %btnShared;
+        border: 1px solid $light-color;
+    }
+    &3 {
+        @extend %btnShared;
+        border: 1px solid $light-color;
+        background: $color_blue;
+        &:hover {
+            background: rgb(2, 109, 172);
+        }
+    }
+    &4 {
+        @extend %btnShared;
+        width: 49%;
+        color: white;
+    }
+    &5 {
+        @extend %btnShared;
+        background: $dark_color;
+        &:hover {
+            background: rgb(75, 75, 75);
+        }
+    }
+    &6 {
+        @extend %btnShared;
+        color: $dark_color;
+        background: $light_color;
+        &:hover {
+            background: rgb(216, 216, 216);
+        }
+    }
+    &Call {
+        @extend %btnShared;
+        background: $dark_color;
+        width: 49%;
+        &:hover {
+            background: rgb(75, 75, 75);
+        }
+    }
+    
+}
+
+.mainDiv {
+    .topGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .box {
+        // border: 1px solid black;
+        background: $color_grey;
+        text-align: center;
+        span {
+            font-weight: bold;
+        }
+        i {
+            padding: 20px;
+            font-size: 2rem;
+            border-radius: 50%;
+            background: $color_green;
+            color: $light-color;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: $subHeadings;
+        }
+        .mainBoxPtag {
+            margin-top: 20px;
+        }
+    }
+    #box1, #box2, #box3 {
+        background: $light-color;
+        padding: 40px;
+    }
+    .textBox {
+        text-align: center;
+        padding: $left_padding;
+        .pOne {
+            font-weight: bold;
+        }
+        // span {
+        //     font-size: $heading;
+        // }
+    }
+
+    .cards {
+        .cardsDiv img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.3);
+                transition: all 0.5s ease;
+            }
+        }
+        #card1 {
+            grid-area: card1;
+        }
+        #card2 {
+            grid-area: card2;
+        }
+        #card3 {
+            grid-area: card3;
+        }
+        #card4 {
+            grid-area: card4;
+        }
+        #card5 {
+            grid-area: card5;
+        }
+        #card6 {
+            grid-area: card6;
+        }
+        #card7 {
+            grid-area: card7;
+        }
+        #card8 {
+            grid-area: card8;
+        }
+        .cases {
+            display: grid;
+            grid-template-areas:
+                'card1 card2 card3 card4'
+                'card5 card6 card7 card8';
+            grid-gap: 0.7rem;
+            padding: 0 $left_padding;
+            margin-bottom: $left_padding;
+        }
+    }
+
+    .twoColumns {
+        &People {
+            @extend %twoColumnsShared;
+            .boxText1 {
+                background: $color_green;
+                color: $light-color;
+            }
+        }
+        &Blogs {
+            @extend %twoColumnsShared;
+            .boxText2 {
+                background: $color_blue;
+                color: $light-color;
+            }
+        }
+        &Contact {
+            @extend %twoColumnsShared;
+            .boxText3 {
+                background-color: $light-color;
+                h2 {
+                    margin-bottom: 20px;
+                }
+                form {
+                    width: 100%;
+                    input, textarea {
+                        width: 100%;
+                        height: 40px;
+                        margin-bottom: 20px;
+                        border: none;
+                        padding: 5px;
+                    }
+                    textarea {
+                        height: 80px;
+                    }
+                }
+            }
+        }
+    }
+
+    .team {
+        margin-bottom: $left_padding;
+        .teamImages {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: $left_padding;
+            padding: 0 $left_padding;
+        }
+        .imgDiv img {
+            width: 100%;
+            border-radius: 50%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .imgText {
+            text-align: center;
+        }
+    }
+}
+
+footer {
+    background: $dark_color;
+    color: white;
+    text-align: center;
+    padding: $left_padding;
+    ul {
+        // display: flex;
+        // justify-content: center;
+        display: flex;
+        justify-content: center;
+        li {
+            list-style: none;
+            a {
+                color: white;
+                font-size: 2em;
+                margin-right: 20px;
+                &:hover {
+                    color: $color_green;
+                }
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+
+#imgOpen{
+    background: rgba($color: black, $alpha: 0.8);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(10px);
+    color: white;
+    #openText {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% ,-50%);
+        // max-width: 800px;
+        // max-height: 600px;
+        margin: auto;
+        // border: 2px solid white;
+        display: grid;
+        grid-template-rows: 0.3fr 1fr 0.3fr;
+        grid-template-columns: 0.1fr 1fr 0.1fr;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            // margin: 0px 10px;
+            grid-row: 2/span 1;
+            grid-column: 2/span 1;
+            border: 5px solid $light_color;
+        }
+    }
+    #closeBtn{
+        grid-column: 3/span 1;
+        grid-row: 0/span 1;
+        display: block;
+        margin: auto;
+        &:hover{
+        cursor: pointer;
+        // background: $color_green;
+        }
+    }
+    span {
+        font-size: $font_biggest;
+        color: white;
+        &:hover{
+            cursor: pointer;
+            color: $color_green;
+        }
+    }
+    #prevImg {
+        grid-row: 2/span 1;
+        margin: auto;
+    }
+    #nextImg {
+        grid-row: 2/span 1;
+        grid-column: 3/span 1;
+        margin: auto;
+    }
+    #imgNumber {
+        // border: 2px solid white;
+        grid-row: 3/span 1;
+        grid-column: 1/span 3;
+        margin-top: 10px;
+        text-align: center;
+        span {
+            font-size: 18px;
+            color: $color_grey;
+        }
+    }
+}
+
+
+// ************* HOME PAGE CODE ENDS ****************
+
+// ************* BLOG CODE STARTS *****************
+// .showBlogText {
+//     height: 100% !important;
+//     display: block !important;
+// }
+.blogOneImg {
+    max-width: 500px;
+    max-height: 700px;
+    margin: 20px auto;
+}
+%blogSectionShared {
+    padding: $left_padding;
+    display: none;
+    img {
+        margin: auto;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        // padding: $left_padding 400px;
+    }
+    .topBar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span{
+            font-size: $font_biggest;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+.blogHeader{
+    // background: url('images/blog.jpg') center center/cover no-repeat;
+    height: 30vh;
+    .blogContentBox{
+        text-align: center;
+        color: white;
+        // border: 2px solid white;
+        margin: auto;
+        z-index: 20;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h1{
+            font-weight: 100;
+        }
+    }
+}
+main{
+    .twoColumns{
+        &ArticleOne{
+            @extend %twoColumnsShared;
+            .twoColumnsInfo {
+                margin-top: 20px;
+            }
+            i {
+                font-size: 18px;
+                color: $dark_color
+            }
+        }
+        &ArticleTwo{
+            @extend %twoColumnsShared;
+            background: $dark_color;
+            color: $light_color;
+            .twoColumnsInfo {
+                margin-top: 20px;
+            }
+            i {
+                font-size: 18px;
+                color: $light_color;
+            }
+        }
+    }
+    .blogSection {
+        &1 {
+            @extend %blogSectionShared;
+            // height: 0;
+            transition: all 2s;
+            i {
+                font-size: 18px;
+                color: $dark_color
+            }
+        }
+        &2 {
+            @extend %blogSectionShared;
+            background: $dark_color;
+            color: $light-color;
+            i {
+                font-size: 18px;
+                color: $light_color;
+            }
+        }
+    }
+}
+
+@media (max-width: 769px){
+    .topGrid{
+        display: block !important;
+        
+    }
+    .twoColumns{
+        display: block !important;
+        // grid-template-rows: 1fr 1fr;
+        // grid-template-columns: auto !important;
+        .divImg{
+            margin-bottom: -11px;
+        }
+    }
+    .cases{
+        grid-template-areas: 
+        'card1 card2'
+        'card3 card4'
+        'card5 card6'
+        'card7 card8' !important;
+    }
+    .teamImages{
+        display: block !important;
+        padding: 0 150px !important;
+    }
+}
+
+@media (max-width: 480px){
+    @import 'functions_mobile';
+    body{
+        font-size: 16px;
+    }
+    h1 {
+        font-size: $font_biggest;
+    }
+    h2 {
+        font-size: $heading;
+    }
+    
+    i {
+        font-size: 2rem;
+        color: white;
+    }
+    .contentBox{
+        p{
+            font-size: 18px !important;
+        }
+    }
+    #navMobileOpenButton {
+        display: block;
+    }
+    // .navbar{
+    //     // display: block;
+    //     text-align: center;
+    //     padding: 20px 15px;
+    // }
+    .navlinks{
+        display: none !important;
+        margin-top: 15px;
+        li{
+            margin-left: 15px !important;
+        }
+    }
+    #firstLink{
+        margin-left: 0 !important;
+    }
+    .cases{
+        grid-template-areas: 
+        'card1''card2'
+        'card3'' card4'
+        'card5 ''card6'
+        'card7'' card8' !important;
+        padding: 0 $left_padding !important;
+    }
+    .teamImages{
+        padding: 0 50px !important;
+    }
+    .contentBox{
+        text-align: center;
+    }
+    .boxText{
+        padding: $top_padding $left_padding !important;
+    }
+    #box1, #box2, #box3 {
+        padding: 30px !important;
+    }
+    .textBox{
+        padding: $left_padding !important;
+    }
+    %blogSectionShared {
+        img {
+            padding: 20px;
+        }
+    }
+
+    #openText {
+        display: block !important;
+        width: 85%;
+    }
+    #nextImg, #closeBtn {
+        float: right;
+    }
+}

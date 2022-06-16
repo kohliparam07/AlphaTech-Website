@@ -1,0 +1,20 @@
+/*
+functions and mixins:
+difference between function and mixin is that function will have a return type
+*/
+
+// function to set text colour based on background colour
+
+@function setTextColor($color){
+    @if (lightness($color) > 50) {
+        @return #000;
+    }
+    @else{
+        @return #fff;
+    }
+}
+
+// mixin to add transform
+@mixin transform($property) {
+    transform: $property;
+}

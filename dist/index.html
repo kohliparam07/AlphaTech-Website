@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to AlphaTech</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/cd57f5a2a1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header id="home">
+        <img src="images/showcase.jpg" alt="background">
+        <div class="navbar topScrolled" id="navigationBar">
+            <span><a href="index.html"><i class="fa-solid fa-microchip"></i><span id="alpha">Alpha</span>Tech</a></span>
+            <nav class="navlinks">
+                <ul>
+                    <li id="firstLink"><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#ourCases">Cases</a></li>
+                    <li><a href="#ourBlogs">Blog</a></li>
+                    <li><a href="#contactUs">Contact</a></li>
+                </ul>
+            </nav>
+            <div id="navMobileOpenButton"></div>
+        </div>
+        <div id="wrapper">
+            <span id="closeMobileNav">&times;</span>
+            <nav class="navLinksMoblie" id="navMobile">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#ourCases">Cases</a></li>
+                    <li><a href="#ourBlogs">Blog</a></li>
+                    <li><a href="#contactUs">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="contentBox">
+            <h1>The Sky Is The Limit</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipar.</p>
+            <button class="btn btn1"><a href="#about"><i class="fa-solid fa-angle-right"></i> Read More</a></button>
+        </div>
+    </header>
+
+    <main class="mainDiv">
+        <div id="imgOpen">
+            <div class="sliderImg" id="openText">
+                <span id="closeBtn">&times;</span>
+                <img src="images/showcase.jpg" alt="sample" id="imgPreview">
+                <div id="imgNumber">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, debitis.</p>
+                    <span id="imageNumber"></span>
+                </div>
+                <span id="prevImg">&lt;</span>
+                <span id="nextImg">&gt;</span>
+            </div>
+            <!-- <div id="closeBtn">Close</div> -->
+        </div>
+
+
+        <!---  Hero Banner Starts -->
+        <section class="topGrid" id="about">
+            <div class="box" id="box1">
+                <span><i class="fa-solid fa-building-columns"></i></span>
+                <h2>Investment Banking</h2>
+                <div class="boxInfo">
+                    <p class="mainBoxPtag">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi,
+                        consectetur!</p>
+                </div>
+            </div>
+            <div class="box" id="box2">
+                <span><i class="fa-solid fa-users"></i></span>
+                <h2>Investment Banking</h2>
+                <div class="boxInfo">
+                    <p class="mainBoxPtag">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi,
+                        consectetur!</p>
+                </div>
+            </div>
+            <div class="box" id="box3">
+                <span><i class="fa-solid fa-pencil"></i></span>
+                <h2>Investment Banking</h2>
+                <div class="boxInfo">
+                    <p class="mainBoxPtag">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi,
+                        consectetur!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="twoColumns twoColumnsPeople">
+            <div class="divImg"><img src="images/people.jpg" alt="people"></div>
+            <div class="boxText boxText1">
+                <span class="pTwo">What we are looking for</span>
+                <h2>We Provide The Bespoke Solutions</h2>
+                <div class="twoColumnsInfo">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur praesentium corrupti id
+                        maxime magni sapiente molestiae deleniti quisquam pariatur repudiandae.</p>
+                </div>
+                <button class="btn btn2">Read More</button>
+            </div>
+        </section>
+
+        <section class="cards" id="ourCases">
+            <div class="textBox">
+                <span class="pOne">This is what we do</span>
+                <h2>Business Cases</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, labore.</p>
+            </div>
+            <div class="cases">
+                <div class="cardsDiv" id="img1"><img src="cases/cases1.jpg" alt="cases"></div>
+                <div class="cardsDiv" id="img2"><img src="cases/cases2.jpg" alt="cases"></div>
+                <div class="cardsDiv" id="img3"><img src="cases/cases3.jpg" alt="cases"></div>
+                <div class="cardsDiv" id="img4"><img src="cases/cases4.jpg" alt="cases"></div>
+                <div class="cardsDiv" id="img5"><img src="cases/cases5.jpg" alt="cases"></div>
+                <div class="cardsDiv" id="img6"><img src="cases/cases6.jpg" alt="cases"></div>
+                <div class="cardsDiv" id="img7"><img src="cases/cases7.jpg" alt="cases"></div>
+                <div class="cardsDiv" id="img8"><img src="cases/cases8.jpg" alt="cases"></div>
+            </div>
+        </section>
+
+        <article class="twoColumns twoColumnsBlogs" id="ourBlogs">
+            <div class="boxText boxText2">
+                <span class="pTwo">May 5, 2021</span>
+                <h2>Blog Post One</h2>
+                <div class="twoColumnsInfo">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quis officiis dignissimos
+                        repellendus cupiditate maxime officia iure veritatis hic quia.</p>
+                </div>
+                <button class="btn btn3"><a href="blogs.html" target="_blank">Read Our Blog</a></button>
+            </div>
+            <div class="divImg"><img src="images/blog.jpg" alt="blogs"></div>
+        </article>
+
+        <section class="team">
+            <div class="textBox">
+                <span class="pOne">Who we are</span>
+                <h2>Our Professional Team</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, labore.</p>
+            </div>
+            <div class="teamImages">
+                <div class="teamDiv">
+                    <div class="imgDiv"><img src="team/person1.jpg" alt="team"></div>
+                    <div class="imgText">
+                        <span>John Doe</span><br>
+                        <span>President</span>
+                    </div>
+                </div>
+                <div class="teamDiv">
+                    <div class="imgDiv"><img src="team/person2.jpg" alt="team"></div>
+                    <div class="imgText">
+                        <span>Jane Doe</span><br>
+                        <span>Vice President</span>
+                    </div>
+                </div>
+                <div class="teamDiv">
+                    <div class="imgDiv"><img src="team/person3.jpg" alt="team"></div>
+                    <div class="imgText">
+                        <span>Will Smith</span><br>
+                        <span>Marketing Head</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="twoColumns twoColumnsContact" id="contactUs">
+            <div class="divImg"><img src="images/contact.jpg" alt="contact"></div>
+            <div class="boxText boxText3">
+                <h2>Contact Us</h2>
+                <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                    <p>
+                        <label for="name"></label>
+                        <input type="text" name="name" id="name" placeholder="Enter name">
+                    </p>
+                    <p>
+                        <label for="email"></label>
+                        <input type="email" name="email" id="email" placeholder="Enter email">
+                    </p>
+                    <p>
+                        <label for="phone"></label>
+                        <input type="number" name="phone" id="phone" placeholder="Enter phone">
+                    </p>
+                    <p>
+                        <label for="message"></label>
+                        <textarea name="message" id="message" cols="30" rows="10"
+                            placeholder="Enter message"></textarea>
+                    </p>
+                    <div class="captcha">
+                        <div data-netlify-recaptcha="true"></div>
+                    </div>
+                    <button class="btn btn4">Send</button>
+                    <button class="btn btnCall"><a href="tel:+91 8556850535">Call us</a></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+        </ul>
+        <p>Copyright &copy; 2022 - AlplaTech</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="index.js"></script>
+</body>
+<!-- <script>
+    var mobileButton = document.getElementById('navMobileOpenButton');
+    var mobileMenu = document.getElementById('wrapper');
+    var links = document.getElementById('navMobile');
+    var closeMobileBtn = document.getElementById('closeMobileNav');
+    mobileButton.addEventListener('click', ()=>{
+        mobileMenu.style.height='100vh';
+        links.style.display = 'block';
+        closeMobileBtn.style.display = 'block';
+    })
+    closeMobileBtn.addEventListener('click', ()=>{
+        mobileMenu.style.height='0vh';
+        links.style.display = 'none';
+        closeMobileBtn.style.display = 'none';
+    })
+</script> -->
+
+</html>
